@@ -1,0 +1,10 @@
+[{
+  "_id": {
+    "$oid": "67eb86231e92d225443a9789"
+  },
+  "review_id": 1,
+  "review_customer_id": 1,
+  "review_food_id": 1,
+  "review_content": "eeya",
+  "review_rating": 1
+}]

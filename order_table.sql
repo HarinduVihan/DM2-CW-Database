@@ -1,5 +1,5 @@
 --------------------------------------------------------
---  File created - Saturday-March-29-2025   
+--  File created - Wednesday-April-16-2025   
 --------------------------------------------------------
 --------------------------------------------------------
 --  DDL for Table ORDER_TABLE
@@ -18,30 +18,4 @@
   TABLESPACE "SYSTEM" ;
 REM INSERTING into SYSTEM.ORDER_TABLE
 SET DEFINE OFF;
---------------------------------------------------------
---  DDL for Index ORDER_TABLE_PK
---------------------------------------------------------
-
-  CREATE UNIQUE INDEX "SYSTEM"."ORDER_TABLE_PK" ON "SYSTEM"."ORDER_TABLE" ("ORDER_ID") 
-  PCTFREE 10 INITRANS 2 MAXTRANS 255 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "SYSTEM" ;
---------------------------------------------------------
---  Constraints for Table ORDER_TABLE
---------------------------------------------------------
-
-  ALTER TABLE "SYSTEM"."ORDER_TABLE" MODIFY ("ORDER_ID" NOT NULL ENABLE);
-  ALTER TABLE "SYSTEM"."ORDER_TABLE" ADD CONSTRAINT "ORDER_TABLE_PK" PRIMARY KEY ("ORDER_ID")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "SYSTEM"  ENABLE;
---------------------------------------------------------
---  Ref Constraints for Table ORDER_TABLE
---------------------------------------------------------
-
-  ALTER TABLE "SYSTEM"."ORDER_TABLE" ADD CONSTRAINT "ORDER_TABLE_FK1" FOREIGN KEY ("ORDER_CUSTOMER_ID")
-	  REFERENCES "SYSTEM"."CUSTOMER_TABLE" ("CUSTOMER_ID") ENABLE;
+Insert into SYSTEM.ORDER_TABLE (ORDER_ID,ORDER_TOTAL_PRICE,ORDER_CUSTOMER_ID,ORDER_STATUS) values (1,20000,1,'1');

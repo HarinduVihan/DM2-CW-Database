@@ -18,7 +18,9 @@
   TABLESPACE "SYSTEM" ;
 REM INSERTING into SYSTEM.ORDER_TABLE
 SET DEFINE OFF;
+
 Insert into SYSTEM.ORDER_TABLE (ORDER_ID,ORDER_TOTAL_PRICE,ORDER_CUSTOMER_ID,ORDER_STATUS) values (8,4262,0,null);
+
 --------------------------------------------------------
 --  DDL for Index ORDER_TABLE_PK
 --------------------------------------------------------

@@ -1,5 +1,5 @@
 --------------------------------------------------------
---  File created - Thursday-April-17-2025   
+--  File created - Sunday-April-27-2025   
 --------------------------------------------------------
 --------------------------------------------------------
 --  DDL for Table ORDER_TABLE
@@ -17,11 +17,13 @@
   TABLESPACE "SYSTEM" ;
 REM INSERTING into SYSTEM.ORDER_TABLE
 SET DEFINE OFF;
-Insert into SYSTEM.ORDER_TABLE (ORDER_ID,ORDER_TOTAL_PRICE,ORDER_CUSTOMER_ID) values (1,492,23);
-Insert into SYSTEM.ORDER_TABLE (ORDER_ID,ORDER_TOTAL_PRICE,ORDER_CUSTOMER_ID) values (2,431046,23);
-Insert into SYSTEM.ORDER_TABLE (ORDER_ID,ORDER_TOTAL_PRICE,ORDER_CUSTOMER_ID) values (3,505416,23);
-Insert into SYSTEM.ORDER_TABLE (ORDER_ID,ORDER_TOTAL_PRICE,ORDER_CUSTOMER_ID) values (4,639615,23);
-Insert into SYSTEM.ORDER_TABLE (ORDER_ID,ORDER_TOTAL_PRICE,ORDER_CUSTOMER_ID) values (5,639615,23);
+Insert into SYSTEM.ORDER_TABLE (ORDER_ID,ORDER_TOTAL_PRICE,ORDER_CUSTOMER_ID) values (9,500,42);
+Insert into SYSTEM.ORDER_TABLE (ORDER_ID,ORDER_TOTAL_PRICE,ORDER_CUSTOMER_ID) values (10,2850,43);
+Insert into SYSTEM.ORDER_TABLE (ORDER_ID,ORDER_TOTAL_PRICE,ORDER_CUSTOMER_ID) values (11,1500,43);
+Insert into SYSTEM.ORDER_TABLE (ORDER_ID,ORDER_TOTAL_PRICE,ORDER_CUSTOMER_ID) values (12,400,42);
+Insert into SYSTEM.ORDER_TABLE (ORDER_ID,ORDER_TOTAL_PRICE,ORDER_CUSTOMER_ID) values (13,400,42);
+Insert into SYSTEM.ORDER_TABLE (ORDER_ID,ORDER_TOTAL_PRICE,ORDER_CUSTOMER_ID) values (7,1500,42);
+Insert into SYSTEM.ORDER_TABLE (ORDER_ID,ORDER_TOTAL_PRICE,ORDER_CUSTOMER_ID) values (8,300,42);
 --------------------------------------------------------
 --  DDL for Index ORDER_TABLE_PK
 --------------------------------------------------------
@@ -37,3 +39,11 @@ Insert into SYSTEM.ORDER_TABLE (ORDER_ID,ORDER_TOTAL_PRICE,ORDER_CUSTOMER_ID) va
 --------------------------------------------------------
 
   ALTER TABLE "SYSTEM"."ORDER_TABLE" MODIFY ("ORDER_ID" NOT NULL ENABLE);
+  ALTER TABLE "SYSTEM"."ORDER_TABLE" ADD CONSTRAINT "ORDER_TABLE_PK" PRIMARY KEY ("ORDER_ID")
+  USING INDEX "SYSTEM"."ORDER_TABLE_PK"  ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table ORDER_TABLE
+--------------------------------------------------------
+
+  ALTER TABLE "SYSTEM"."ORDER_TABLE" ADD CONSTRAINT "ORDER_TABLE_FK1" FOREIGN KEY ("ORDER_CUSTOMER_ID")
+	  REFERENCES "SYSTEM"."CUSTOMER_TABLE" ("CUSTOMER_ID") ENABLE;
